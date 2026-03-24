@@ -1,0 +1,25 @@
+--this is a way for creating a table for a taxi company 
+--syntax:create table table_name(values,datatype);
+
+create table rides(
+    ride_id INT,
+    driver_id INT,
+    rider VARCHAR(100),
+    pickup VARCHAR(100),
+    destination VARCHAR(100),
+    ride_date DATETIME,
+    payment DECIMAL(10,2)
+);
+
+--if we want to see the table type the following
+--select*from tablename;
+
+select * from rides
+
+--o/p
+ride_id	driver_id	pickup	destination	ride_date	payment	rider
+1	101	karur	velliyani	2025-12-20 00:00:00	500.00	201
+2	102	vijayapuram	karur	2025-12-12 10:00:00	400.00	202
+3	103	vilupuram	thrichy	2025-12-10 12:00:00	200.00	203
+4	104	namakkal	paramathi	2025-12-08 14:00:00	500.00	204
+5	105	madurai	velliyani	2025-12-06 16:00:00	500.00	205
