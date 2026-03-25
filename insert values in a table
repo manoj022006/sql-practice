@@ -1,0 +1,17 @@
+-- we should insert values inside the table by the following
+
+INSERT INTO case_end (i_d, coust_name, email, ph_no, address, amount)
+VALUES
+(1, 'Ravi Kumar', 'ravi@gmail.com', '9876543210', 'Chennai', 1500),
+(2, 'Priya Sharma', 'priya@gmail.com','9876543211', 'Coimbatore', 2300),
+(3, 'Arun Raj', 'arun@gmail.com', '9876543212', 'Madurai', 1750),
+(4, 'Sneha Iyer', 'sneha@gmail.com','9876543213', 'Trichy', 3200),
+(5, 'Karthik S', 'karthik@gmail.com', '9876543214', 'Salem', 2100);
+
+--o/p
+i_d	coust_name	email	ph_no	address	amount
+1	Ravi Kumar	ravi@gmail.com	9876543210	Chennai	1500
+2	Priya Sharma	priya@gmail.com	9876543211	Coimbatore	2300
+3	Arun Raj	arun@gmail.com	9876543212	Madurai	1750
+4	Sneha Iyer	sneha@gmail.com	9876543213	Trichy	3200
+5	Karthik S	karthik@gmail.com	9876543214	Salem	2100
