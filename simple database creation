@@ -1,0 +1,77 @@
+-- table creation
+
+CREATE TABLE users(
+  user_id INT PRIMARY KEY,
+  name VARCHAR(50),
+  phone VARCHAR(15)
+);
+
+create table restaurant(
+     restaurant_id int primary key,
+     name varchar(50),
+     location varchar(50)
+);
+
+create table menu(
+      item_id int primary key,
+      restaurant_id int,
+      name varchar(50),
+      price int,
+      
+   foreign key(restaurant_id) references restaurant(restaurant_id)
+);
+
+create table orders( 
+order_id int primary key,
+user_id int,
+restaurant_id int,
+amount int,
+order_date date,
+
+foreign key (user_id) references  users(user_id),
+foreign key (restaurant_id) references menu(restaurant_id)
+);
+
+create table  reviews(
+review_id int primary key,
+user_id int,
+restaurant_id int,
+rating int,
+foreign key (user_id) references  users(user_id),
+foreign key (restaurant_id) references restaurant(restaurant_id)
+
+);
+
+-- end of table creation
+
+
+show tables;
+
+-- insertion of values
+
+insert into users values(001,'manoj','9632587410'),
+                        (002,'nallu','9874563210'),
+                        (003,'niranjan','9637412580'),
+                        (004,'bala','9873214560');
+                        
+insert into restaurant values(011,'thandoori tribes','gandhi gramam'),
+                             (012,'taj briyani','pasupathipalayam'),
+                             (013,'salem rr','karur'),
+                             (014,'sumathi','jawahar bazzar');
+                             
+insert into menu values(111,011,'briyani',140),
+                        (112,012,'idly',40),
+                        (113,013,'dosa',80),
+                        (114,014,'parotta',60);
+                        
+insert into orders values(201,001,011,700,'2026-01-01'),
+						 (202,002,012,350,'2026-01-02'),
+                         (203,003,013,450,'2026-01-03'),
+                         (204,004,014,1000,'2026-01-04');   
+                         
+insert into reviews values(211,001,011,4),
+                          (212,002,012,3),
+                          (213,003,013,5),
+                          (214,004,014,4);
+				
+-- end of insertion
