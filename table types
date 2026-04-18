@@ -1,0 +1,36 @@
+--normal table
+CREATE TABLE employees(
+    emp_id      INT PRIMARY KEY,
+    first_name  VARCHAR(50)  NOT NULL,
+    second_name VARCHAR(50)  NOT NULL,
+    hire_date   DATE         NOT NULL,
+    salary      DECIMAL(10,2)
+);
+
+--ctas- create table as
+
+CREATE TABLE high_paid_emp AS
+SELECT  
+    emp_id,      
+    first_name,  
+    second_name, 
+    hire_date,
+    salary      
+FROM employees
+WHERE salary > 60000
+
+-- what ctas do means it creates a table with a previous table with what are all data we neede from previous table with a condition 
+
+--temporary table
+CREATE TEMPORARY TABLE temp_high_paid_emp(
+    emp_id INT,
+    salary      DECIMAL(10,2)
+);
+INSERT INTO temp_high_paid_emp
+SELECT
+     emp_id,
+     salary      
+FROM employees
+WHERE salary > 60000;
+
+-- temp table only appears on that session does not in other sessions
