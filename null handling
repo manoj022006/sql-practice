@@ -1,0 +1,39 @@
+-- creating a table
+
+create table customer_details(
+    id INT,
+    coust_name VARCHAR(100),
+    login_device VARCHAR(100),
+    place VARCHAR(20)
+);
+
+--giving inserts with null values
+insert into customer_details values
+(1,null,'tab','karur'),
+(2,'zoro',null,'namakkal'),
+(3,'sanji','mobile',null),
+(4,'chicka','laptop','us');
+
+ -- this line for only one column accesing null
+select count(*) from customer_details where coust_name is null;
+
+-- for many column
+SELECT id,coust_name,login_device,place 
+from 
+customer_details
+whereid is null or
+coust_name is null or
+login_device is null or
+place is null ;
+
+-- is null means it checks is there any null
+
+-- for replacing null with dummy values we should use coalesce
+SELECT
+id,
+coust_name,
+coalesce(coust_name,'npc')
+from
+customer_details;
+
+-- coalese returns the first non null values
