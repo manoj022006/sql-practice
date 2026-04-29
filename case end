@@ -1,0 +1,37 @@
+-- table creation
+create table case_end(
+    i_d INT,
+    coust_name varchar(100),
+    email varchar(100),
+    ph_no varchar(100), 
+    address varchar(100), 
+    amount INT
+);
+--inserted values
+INSERT INTO case_end (i_d, coust_name, email, ph_no, address, amount)
+VALUES
+(1, 'Ravi Kumar', 'ravi@gmail.com', '9876543210', 'Chennai', 1500),
+(2, 'Priya Sharma', 'priya@gmail.com','9876543211', 'Coimbatore', 2300),
+(3, 'Arun Raj', 'arun@gmail.com', '9876543212', 'Madurai', 1750),
+(4, 'Sneha Iyer', 'sneha@gmail.com','9876543213', 'Trichy', 3200),
+(5, 'Karthik S', 'karthik@gmail.com', '9876543214', 'Salem', 2100);
+
+--case end
+ SELECT 
+       coust_name,
+       amount,
+       CASE 
+          when amount> 2400 then 'high spender'
+          when amount between 1000 and 2000 then 'mid spender'
+          when amount <= 999 then 'low spender'
+       else 'no data'
+       end as spending
+from case_end
+
+o\p
+coust_name	amount	spending
+Ravi Kumar	1500	mid spender
+Priya Sharma	2300	no data
+Arun Raj	1750	mid spender
+Sneha Iyer	3200	high spender
+Karthik S	2100	no data
